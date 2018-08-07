@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>HouseMarket</title>
-    <%= csrf_meta_tags %>
 
+
+<!-- ヘッダー -->
+
+
+<head>
+  <title>HouseMarket</title>
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+    <link rel="stylesheet" type="text/css" src="semantic/semantic.min.css">
+    <script src="semantic/semantic.min.js"></script>
+  <header>
+    <nav class="navbar-expand-lg navbar-dark">
+      <div class="container">
+        <div class="main-header collapse navbar-collapse">
+          <a class="logo">
+            <img class="logo" src="/logo1.png" alt="housemarket" height="70">
+          </a>
+          <ul class="nav-list navbar-nav text-uppercase ml-auto">
+            <li class="nav-item" id="nav-items">
+              <!-- <a class="nav-items nav-link js-scroll-trigger" data-href="#products" style="cursor: pointer;"></a> -->
+              <a class="nav-items">サービスを知る</a>
+              <a class="nav-items">新規登録</a>
+              <a class="nav-items">ログイン</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</head>
+
+
 
   <body>
+
+
     <%= yield %>
   </body>
 </html>
+
+
