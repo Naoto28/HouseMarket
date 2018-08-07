@@ -61,8 +61,3 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 
-
-
-
-
-

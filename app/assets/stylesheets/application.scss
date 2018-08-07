@@ -17,3 +17,61 @@
 @import "bootstrap";
 $import-google-fonts: false;
 @import 'semantic-ui';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+nav {
+  height: 70px;
+  box-shadow: 0px 3px 3px -3px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0px 3px 3px -3px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 3px 3px -3px rgba(0,0,0,0.4);
+  margin-bottom: 1px;
+  background-color: #fffafa;
+}
+
+
+.nav-list {
+  float: right;
+  list-style: none;
+  line-height: 70px;
+  font-family: '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-weight:bold;
+}
+
+.logo {
+  line-height: 70px;
+}
+
+#nav-items a {
+  padding-right: 20px;
+}
+
+#nav-items a {
+  color: black;
+  cursor: pointer;
+}
+
+#nav-items a:hover {
+  color: #ed6103;
+}
+
+#aaa {
+  background-color: red;
+}
+
+
+
+
+
+
+

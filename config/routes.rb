@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :cities
+  resources :estates
+  resources :favorites
+
+  root "roots#top"
+  root "roots#about"
 end
