@@ -10,27 +10,45 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
     <link rel="stylesheet" type="text/css" src="semantic/semantic.min.css">
-    <script src="semantic/semantic.min.js"></script>
   <header>
-    <nav class="navbar-expand-lg navbar-dark">
-      <div class="container">
-        <div class="main-header collapse navbar-collapse">
-          <a class="logo">
-            <img class="logo" src="/logo1.png" alt="housemarket" height="70">
-          </a>
-          <ul class="nav-list navbar-nav text-uppercase ml-auto">
-            <li class="nav-item" id="nav-items">
-              <!-- <a class="nav-items nav-link js-scroll-trigger" data-href="#products" style="cursor: pointer;"></a> -->
-              <a class="nav-items">サービスを知る</a>
-              <a class="nav-items">新規登録</a>
-              <a class="nav-items">ログイン</a>
-            </li>
-          </ul>
+    <% if user_signed_in? %>
+      <nav class="navbar-expand-lg navbar-dark">
+        <div class="container">
+          <div class="main-header collapse navbar-collapse">
+            <%= link_to root_path do %>
+              <img class="logo" src="/logo1.png" alt="housemarket" height="70">
+            <% end %>
+            <ul class="nav-list navbar-nav text-uppercase ml-auto">
+              <li class="nav-item" id="nav-items">
+                <a class="nav-items">サービスを知る</a>
+                <%= link_to 'マイページ', user_path, class: "nav-items" %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-items" %>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    <% else %>
+      <nav class="navbar-expand-lg navbar-dark">
+        <div class="container">
+          <div class="main-header collapse navbar-collapse">
+            <%= link_to root_path do %>
+              <img class="logo" src="/logo1.png" alt="housemarket" height="70">
+            <% end %>
+            <ul class="nav-list navbar-nav text-uppercase ml-auto">
+              <li class="nav-item" id="nav-items">
+                <a class="nav-items">サービスを知る</a>
+                <%= link_to '新規登録', new_user_registration_path, class: "nav-items" %>
+                <%= link_to 'ログイン', new_user_session_path, class: "nav-items" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <% end %>
   </header>
 </head>
 
@@ -40,6 +58,16 @@
 
 
     <%= yield %>
+
+
+
+
+
+    <footer>
+      <span class="footer-text clerefix">©みんなのハウスマーケット</span>
+    </footer>
+
+
   </body>
 </html>
 

@@ -10,7 +10,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180806035442) do
+ActiveRecord::Schema.define(version: 20180809113823) do
+
+  create_table "cities", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estates", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.text "content"
+    t.integer "area"
+    t.integer "city_id"
+    t.integer "user_id"
+    t.integer "type_id"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "estate_id"
+    t.integer "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.text "picture_id"
+    t.integer "user_id"
+    t.integer "estate_id"
+    t.integer "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spaces", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.text "content"
+    t.integer "area"
+    t.integer "city_id"
+    t.integer "user_id"
+    t.integer "type_id"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.integer "estate_id"
+    t.integer "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +88,18 @@ ActiveRecord::Schema.define(version: 20180806035442) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_name"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.text "profile_image_id"
+    t.string "tell_number"
+    t.boolean "admin", default: false
+    t.date "birthday"
+    t.string "living_city"
+    t.text "address"
+    t.text "introduction"
+    t.datetime "deleted_at"
+    t.integer "prefecture_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
