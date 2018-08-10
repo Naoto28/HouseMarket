@@ -2,19 +2,44 @@
 
 <section class="main-visual">
   <div class="main-picture">
-    <h1><div class="">好きなときに好きな場所を</div></h1>
+    <h1><div class="">好きなときに好きな場所を貸し借りしましょう</div></h1>
   </div>
 </section>
 
 
 <div class="container">
 <div class="main-content">
+<div class="top-content">
+
+<div class="top-image col-sm-12 col-md-12">
+  <div id="top-images-left" class="top-images col-sm-12 col-md-4 col-md-offset-1" style="cursor: pointer;">
+    <img src="/icon1.png" height="200">
+    <h3>スペースをお探しの方</h3>
+  </div>
+  <a href="https://hatakeyamatech.biz"><div id="top-images-right" class="top-images col-sm-12 col-md-4 col-md-offset-2">
+    <img src="/icon2.png" height="200">
+    <h3>スペースを貸し出したい方</h3>
+  </div></a>
+</div>
 
 
 
 
 
 
+<!-- -----モーダル----- -->
+<div class="modal_wrapper">
+</div>
+<div class="modal">
+  <div class="modal-header">都道府県で絞り込む</div>
+</div>
+
+
+
+
+
+
+<!-- -----アイテム----- -->
 
 
 <div class="title"><h2><strong>Pick Up</strong></h2></div>
@@ -35,8 +60,7 @@
         <img src="/house2.jpg">
       </div>
       <div class="content">
-        <a class="header">Helen Troy
-</a>
+        <a class="header">Helen Troy</a>
       </div>
     </div>
   </div>
@@ -56,75 +80,88 @@
 
 
 <div class="title"><h2><strong>新着物件</strong></h2></div>
-<!-- <div class="new_estate"> -->
-  <div class="ui link cards ui four column grid">
-    <div class="card">
-      <div class="image">
-        <img src="/house1.jpg">
-      </div>
-      <div class="content">
-        <div class="header">渋谷区</div>
-        <div class="date">
-          <span class="date_time">2018年7月31日公開</span>
-        </div>
-        <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
-      </div>
-      <div class="extra content">
-        <span><i class="user icon"></i> X人がLikeしています</span>
-      </div>
+<div class="ui link cards ui four column grid">
+  <div class="card">
+    <div class="image">
+      <img src="/house1.jpg">
     </div>
-    <div class="card">
-      <div class="image">
-        <img src="/house3.jpg">
+    <div class="content">
+      <div class="header">渋谷区</div>
+      <div class="date">
+        <span class="date_time">2018年7月31日公開</span>
       </div>
-      <div class="content">
-        <div class="header">豊島区</div>
-        <div class="date">
-          <span class="date_time">2018年7月29日公開</span>
-        </div>
-        <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
-      </div>
-      <div class="extra content">
-        <span><i class="user icon"></i> X人がLikeしています</span>
-      </div>
+      <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
     </div>
-    <div class="card">
-      <div class="image">
-        <img src="/house1.jpg">
-      </div>
-      <div class="content">
-        <div class="header">目黒区</div>
-        <div class="date">
-          <span class="date_time">2018年7月27日公開</span>
-        </div>
-        <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
-      </div>
-      <div class="extra content">
-        <span><i class="user icon"></i> X人がLikeしています</span>
-      </div>
+    <div class="extra content">
+      <span><i class="user icon"></i> X人がLikeしています</span>
     </div>
-    <div class="card">
-      <div class="image">
-        <img src="/house2.jpg">
-      </div>
-      <div class="content">
-        <div class="header">府中市</div>
-        <div class="date">
-          <span class="date_time">2018年7月22日公開</span>
-        </div>
-        <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
-      </div>
-      <div class="extra content">
-        <span><i class="user icon"></i> X人がLikeしています</span>
-      </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="/house3.jpg">
     </div>
-<!--   </div> -->
+    <div class="content">
+      <div class="header">豊島区</div>
+      <div class="date">
+        <span class="date_time">2018年7月29日公開</span>
+      </div>
+      <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
+    </div>
+    <div class="extra content">
+      <span><i class="user icon"></i> X人がLikeしています</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="/house1.jpg">
+    </div>
+    <div class="content">
+      <div class="header">目黒区</div>
+      <div class="date">
+        <span class="date_time">2018年7月27日公開</span>
+      </div>
+      <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
+    </div>
+    <div class="extra content">
+      <span><i class="user icon"></i> X人がLikeしています</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="/house2.jpg">
+    </div>
+    <div class="content">
+      <div class="header">府中市</div>
+      <div class="date">
+        <span class="date_time">2018年7月22日公開</span>
+      </div>
+      <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
+    </div>
+    <div class="extra content">
+      <span><i class="user icon"></i> X人がLikeしています</span>
+    </div>
+  </div>
 </div>
 
 
     </div>
   </div>
 </div>
+</div>
+
+<div id="scroll" class="scroll" style="cursor: pointer;" >
+  <div >
+    <img src="top-scroll.png" height="40" >
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
 
 
