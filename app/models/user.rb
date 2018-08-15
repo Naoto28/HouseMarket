@@ -7,6 +7,12 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
+  has_many :prefectures
+  has_many :pictures
+  has_many :favorites
+  has_many :estates
+  has_many :spaces
+
   def soft_delete
     update(deleted_at: Time.now)
   end

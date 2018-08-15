@@ -1,3 +1,99 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*-----user_show-----*/
+
+.user-image {
+  /*border: 1px solid black;*/
+  text-align: center;
+}
+
+.profile-content {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.left-content {
+  float: left;
+}
+
+#message-btn {
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+}
+
+.mail-icon {
+  font-size: 35px;
+}
+
+#favorite-btn {
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+}
+
+.heart-icon {
+  font-size: 35px;
+}
+
+#edit-btn {
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+}
+
+.wrench-icon {
+  font-size: 35px;
+}
+
+.title {
+  /*text-align: center;*/
+}
+
+.profile-info {
+  list-style: none;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
+}
+
+.profile-info label {
+  margin-top: 10px;
+}
+
+.profile-info li {
+  padding: 2px 2px 2px 0;
+}
+
+.profile-info .li_nil {
+  color: #afafaf;
+}
+
+
+.under {
+  height: 1px;
+  background-color: #537791;
+}
+
+
+/*-----user_edit-----*/
+
+#mypage-btn {
+  padding: 21px;
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

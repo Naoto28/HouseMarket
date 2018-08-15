@@ -1,2 +1,74 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="col-sm-12 col-md-8 col-md-offset-2">
+    <div class="profile-content col-md-12">
+      <div class="left-content col-sm-12 col-md-6">
+        <div class="user-image">
+          <% if current_user.profile_image == nil %>
+            <%= image_tag '/user1.png', class: "user-pic", height: "200" %>
+          <% else %>
+            <%= attachment_image_tag @user, :profile_image, :fill, 200, 200, format: 'jpg', class: "user-pic" %>
+          <% end %>
+        </div>
+        <div class="ui blue button" id="message-btn"><i class="far fa-envelope mail-icon"></i></div>
+        <div class="ui red button" id="favorite-btn"><i class="far fa-heart heart-icon"></i></div>
+        <%= link_to edit_user_path(@user) do %>
+          <div class="ui olive button" id="edit-btn"><i class="fas fa-wrench wrench-icon"></i></div>
+        <% end %>
+      </div>
+      <div class="right-content col-sm-12 col-md-6">
+        <h3 class="title">会員登録情報</h3>
+        <div class="profile-info">
+          <ul class="profile-info">
+            <label>ユーザーネーム</label>
+            <% if @user.user_name == nil %>
+              <li class="li_nil">この項目は未入力です</li>
+            <% else %>
+              <li><%= @user.user_name %></li>
+            <% end %>
+            <div class="under"></div>
+            <label>姓</label>
+            <li><%= @user.last_name %></li>
+            <div class="under"></div>
+            <label>名</label>
+            <li><%= @user.first_name %></li>
+            <div class="under"></div>
+            <label>住居都市</label>
+            <% if @user.living_city == nil %>
+              <li class="li_nil">この項目は未入力です</li>
+            <% else %>
+              <li><%= @user.living_city %></li>
+            <% end %>
+            <div class="under"></div>
+            <label>住所</label>
+            <% if @user.address == nil %>
+              <li class="li_nil">この項目は未入力です</li>
+            <% else %>
+              <li><%= @user.address %></li>
+            <% end %>
+            <div class="under"></div>
+            <label>生年月日</label>
+            <% if @user.birthday == nil %>
+              <li class="li_nil">この項目は未入力です</li>
+            <% else %>
+              <li><%= @user.birthday %></li>
+            <% end %>
+            <div class="under"></div>
+            <label>自己紹介</label>
+            <% if @user.introduction == nil %>
+              <li class="li_nil">この項目は未入力です</li>
+            <% else %>
+              <li><%= @user.introduction %></li>
+            <% end %>
+            <div class="under"></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
