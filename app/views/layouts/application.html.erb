@@ -24,7 +24,7 @@
             <ul class="nav-list navbar-nav text-uppercase ml-auto">
               <li class="nav-item" id="nav-items">
                 <a class="nav-items">サービスを知る</a>
-                <%= link_to 'マイページ', user_path, class: "nav-items" %>
+                <%= link_to 'マイページ', user_path(current_user), class: "nav-items" %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-items" %>
               </li>
             </ul>

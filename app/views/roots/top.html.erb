@@ -32,10 +32,62 @@
 </div>
 <div class="modal">
   <div class="modal-header">都道府県で絞り込む</div>
+  <table class="col-sm-12 col-md-12">
+    <tbody>
+      <tr>
+        <th class="col-sm-1 col-md-1">
+          <label>北海道</label>
+        </th>
+        <td class="col-sm-11 col-md-11">
+          <span>
+            <input type="radio" name="prefecture" value="">
+            <label>北海道</label>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>東北</label>
+        </th>
+        <td class="col-sm-11 col-md-11">
+          <span>
+            <input type="radio" name="prefecture" value="">
+            <label>青森県</label>
+          </span>
+        </td>
+        <td>
+          <span>
+            <input type="radio" name="prefecture" value="">
+            <label>岩手県</label>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>関東</label>
+        </th>
+        <td>
+          <span>
+            <input type="radio" name="prefecture" value="">
+            <label>東京都</label>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 
 
+
+<form action="cgi-bin/abc.cgi" method="post">
+<p>
+<input type="radio" name="prefecture" value="">北海道
+</p>
+<p>
+<input type="submit" value="送信する">
+</p>
+</form>
 
 
 

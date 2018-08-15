@@ -1,5 +1,6 @@
 $(function() {
 
+$(document).on('turbolinks:load', function() {
 
 
 $(window).scroll(function() {
@@ -39,7 +40,7 @@ $('#scroll').click(function() {
     $('.modal').fadeIn(500);
   });
 
-
+});
 
 
 
