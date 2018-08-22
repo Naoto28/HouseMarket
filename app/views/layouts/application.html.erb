@@ -10,7 +10,9 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
     <link rel="stylesheet" type="text/css" src="semantic/semantic.min.css">
   <header>
@@ -23,9 +25,20 @@
             <% end %>
             <ul class="nav-list navbar-nav text-uppercase ml-auto">
               <li class="nav-item" id="nav-items">
-                <a class="nav-items">サービスを知る</a>
+                <%= link_to 'サービスを知る', about_path, class: "nav-items" %>
                 <%= link_to 'マイページ', user_path(current_user), class: "nav-items" %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-items" %>
+                <div class="ui compact menu">
+                  <div class="ui simple dropdown item">マーケットメニュー <i class="dropdown icon"></i> <div class="menu">
+
+                    <%= link_to estates_path(current_user) do %>
+                      <div class="">登録不動産</div>
+                    <% end %>
+                      <div class="item">お気に入り</div>
+                      <div class="item">メッセージ</div>
+                    </div>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -40,7 +53,7 @@
             <% end %>
             <ul class="nav-list navbar-nav text-uppercase ml-auto">
               <li class="nav-item" id="nav-items">
-                <a class="nav-items">サービスを知る</a>
+                <%= link_to 'サービスを知る', about_path, class: "nav-items" %>
                 <%= link_to '新規登録', new_user_registration_path, class: "nav-items" %>
                 <%= link_to 'ログイン', new_user_session_path, class: "nav-items" %>
               </li>

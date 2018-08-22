@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180815080317) do
+ActiveRecord::Schema.define(version: 20180821065025) do
 
   create_table "cities", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20180815080317) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prefecture_id"
+    t.string "comment"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -40,11 +42,19 @@ ActiveRecord::Schema.define(version: 20180815080317) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "status"
+    t.text "content"
+    t.integer "from"
+    t.integer "to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.text "picture_id"
-    t.integer "user_id"
     t.integer "estate_id"
-    t.integer "space_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

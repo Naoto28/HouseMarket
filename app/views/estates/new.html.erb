@@ -1,2 +1,71 @@
-<h1>Estates#new</h1>
-<p>Find me in app/views/estates/new.html.erb</p>
+<div class="container eatate_main">
+  <div class="col-sm-12 col-md-12">
+    <h2 class="new-estate-title">新規不動産登録</h2>
+    <div class="col-sm-12 col-md-10 col-md-offset-1 about-content">
+      <div class="ui form">
+          <%= nested_form_for(@estate, url: { action: :create }) do |f| %>
+        <h4 class="ui dividing header" id="form-title">不動産情報</h4>
+        <div class="field">
+          <%= f.label :不動産名, "不動産名" %>
+          <%= f.text_field :name, placeholder: "" %>
+        </div>
+        <div class="field">
+          <%= f.label :価格, "価格" %>
+          <%= f.text_field :price, placeholder: "" %>
+        </div>
+        <div class="four wide fields">
+          <div class="field">
+            <%= f.label :都道府県, "都道府県" %>
+            <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {:selected => 13} ,{:class => "ui fluid search dropdown"} %>
+          </div>
+          <div class="field">
+            <%= f.label :市区町村, "市区町村" %>
+            <%= f.collection_select :city_id, City.all, :id, :name, {} ,{:class => "ui fluid search dropdown"} %>
+          </div>
+          <div class="field">
+            <%= f.label :不動産種類, "不動産種類" %>
+            <%= f.collection_select :type_id, Type.all, :id, :name, {} ,{:class => "ui fluid search dropdown"} %>
+          </div>
+          <div class="field">
+            <%= f.label :対象面積, "対象面積" %>
+            <%= f.text_field :area, placeholder: "㎡で入力" %>
+          </div>
+        </div>
+
+        <!-- -----子フォーム----- -->
+
+        <div class="field">
+        <%= f.label :画像, "画像" %>
+          <% count = 0 %>
+        <%= f.fields_for :pictures do |m| %>
+        <%= m.attachment_field :picture ,{:id => "picture-field"}%>
+          <% count += 1 %>
+          <% if count > 1 %>
+        <%= m.link_to_remove do %>
+        <i class="fas fa-reply reply-icon"></i>
+        <% end %>
+        </div>
+        <% end %>
+        <% end %>
+        <%= f.link_to_add "画像を追加する", :pictures, class: "ui button" %>
+
+        <!-- ------------------- -->
+
+
+
+        <h4 class="ui dividing header" id="form-title">アピールポイント</h4>
+        <div class="field">
+          <label>コメント</label>
+          <%= f.text_field :comment, placeholder: "16文字以内で入力してください" %>
+        </div>
+        <div class="field">
+          <label>本文</label>
+          <%= f.text_area :content, placeholder: "" %>
+        </div>
+          <%= f.submit value: "登録する", class: "ui button new-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

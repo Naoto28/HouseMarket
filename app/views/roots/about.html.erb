@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="col-sm-12 col-md-12">
+    <div class="col-sm-12 col-md-10 col-md-offset-1 about-content">
+      <div class="title"><h2><strong>みんなのハウスマーケットとは？</strong></h2></div>
+      <div class="col-sm-12 col-md-12 about-word">
+        みんなのハウスマーケットとは現在利用していない土地・部屋などを<strong class="word">不動産業者を介さずに</strong>ユーザー同士で貸し借りすることができるサービスです。<br>自分の所有物を貸す際には不動産業者の仲介が必要だという認識の方が多く、<strong class="word">本来支払う必要のない手数料等を支払っている</strong>ことが多々あります。<br>インターネットが発達した現在であればユーザー同士直接取引し、貸し借りすることは実現可能ではないかと思い<strong class="word">みんなのハウスマーケット</strong>をリリースしました。
+      </div>
+      <div class="title"><h2><strong>貸主側のメリット</strong></h2></div>
+      <p>・好きなときに手軽にマーケットに出すことができる</p>
+      <p>・自分で撮影した画像を使用できるので業務的に映らない</p>
+      <p>・使用しない数ヶ月の間だけなど、効率的に有効活用できる</p>
+      <p>・仲介手数料の支払いが不要になる</p>
+      <div class="title"><h2><strong>借主側のメリット</strong></h2></div>
+      <p>・手軽に小規模のスペースを探すことができる</p>
+      <p>・業者を通さないので細かい手順がなく、すぐにスペースを利用することができる</p>
+      <p>・直接出品者と料金・期間など交渉することができる</p>
+      <p>・仲介手数料の支払いが不要になる</p>
+       <div class="col-sm-12 col-md-6 about-firld">
+        <div class="about-firld-title"><h3><strong>会員登録がまだの方</strong></h3></div>
+        <%= link_to new_user_registration_path do %>
+          <div class="ui orange button" id="singup-btn">新規登録</div>
+        <% end %>
+       </div>
+       <div class="col-sm-12 col-md-6 about-firld">
+        <div class="about-firld-title"><h3><strong>会員登録がお済みの方</strong></h3></div>
+        <%= link_to new_user_session_path do %>
+          <div class="ui orange button" id="login-btn">ログイン</div>
+        <% end %>
+       </div>
+    </div>
+  </div>
+</div>

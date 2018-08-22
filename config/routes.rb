@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'messages/index'
+
+  get 'messages/show'
+
+  get 'messages/edit'
+
+  get 'messages/new'
+
   get 'spaces/index'
 
   get 'spaces/show'
@@ -18,9 +26,11 @@ devise_for :users, controllers: {
   resources :cities
   resources :estates
   resources :favorites
+  resources :messages
 
   root "roots#top"
-  root "roots#about"
+  get "roots/about", as: 'about'
+
 
 
 

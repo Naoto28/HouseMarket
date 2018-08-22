@@ -16,78 +16,21 @@
     <img src="/icon1.png" height="200">
     <h3>スペースをお探しの方</h3>
   </div>
-  <a href="https://hatakeyamatech.biz"><div id="top-images-right" class="top-images col-sm-12 col-md-4 col-md-offset-2">
-    <img src="/icon2.png" height="200">
-    <h3>スペースを貸し出したい方</h3>
-  </div></a>
+  <%= link_to new_estate_path do%>
+    <div id="top-images-right" class="top-images col-sm-12 col-md-4 col-md-offset-2">
+      <img src="/icon2.png" height="200">
+      <h3>スペースを貸し出したい方</h3>
+    </div>
+  <% end %>
 </div>
-
-
-
-
 
 
 <!-- -----モーダル----- -->
-<div class="modal_wrapper">
+
+<%= render 'modal' %>
+
+
 </div>
-<div class="modal">
-  <div class="modal-header">都道府県で絞り込む</div>
-  <table class="col-sm-12 col-md-12">
-    <tbody>
-      <tr>
-        <th class="col-sm-1 col-md-1">
-          <label>北海道</label>
-        </th>
-        <td class="col-sm-11 col-md-11">
-          <span>
-            <input type="radio" name="prefecture" value="">
-            <label>北海道</label>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          <label>東北</label>
-        </th>
-        <td class="col-sm-11 col-md-11">
-          <span>
-            <input type="radio" name="prefecture" value="">
-            <label>青森県</label>
-          </span>
-        </td>
-        <td>
-          <span>
-            <input type="radio" name="prefecture" value="">
-            <label>岩手県</label>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          <label>関東</label>
-        </th>
-        <td>
-          <span>
-            <input type="radio" name="prefecture" value="">
-            <label>東京都</label>
-          </span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-
-
-<form action="cgi-bin/abc.cgi" method="post">
-<p>
-<input type="radio" name="prefecture" value="">北海道
-</p>
-<p>
-<input type="submit" value="送信する">
-</p>
-</form>
 
 
 
@@ -131,70 +74,90 @@
 
 
 
-<div class="title"><h2><strong>新着物件</strong></h2></div>
+<div class="title"><h2><strong>新しく登録された不動産</strong></h2></div>
 <div class="ui link cards ui four column grid">
+<% @estates.first(4).each do |f| %>
   <div class="card">
     <div class="image">
-      <img src="/house1.jpg">
+      <% f.pictures.first(1).each do |p| %>
+      <%= link_to estate_path(f) do %>
+        <%= attachment_image_tag p, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
+      <% end %>
+      <% end %>
     </div>
     <div class="content">
-      <div class="header">渋谷区</div>
+
+      <p class="header"><%= f.name %></p>
+
       <div class="date">
-        <span class="date_time">2018年7月31日公開</span>
+        <span class="date_time"><%= f.created_at.to_s.slice(0, 10) %> 公開</span>
       </div>
-      <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
+      <p class="description"><i class="fas fa-home"></i> <%= f.city.name %></p>
+      <div class="description"><%= f.comment %></div>
     </div>
     <div class="extra content">
       <span><i class="user icon"></i> X人がLikeしています</span>
     </div>
   </div>
-  <div class="card">
-    <div class="image">
-      <img src="/house3.jpg">
-    </div>
-    <div class="content">
-      <div class="header">豊島区</div>
-      <div class="date">
-        <span class="date_time">2018年7月29日公開</span>
-      </div>
-      <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
-    </div>
-    <div class="extra content">
-      <span><i class="user icon"></i> X人がLikeしています</span>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img src="/house1.jpg">
-    </div>
-    <div class="content">
-      <div class="header">目黒区</div>
-      <div class="date">
-        <span class="date_time">2018年7月27日公開</span>
-      </div>
-      <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
-    </div>
-    <div class="extra content">
-      <span><i class="user icon"></i> X人がLikeしています</span>
-    </div>
-  </div>
-  <div class="card">
-    <div class="image">
-      <img src="/house2.jpg">
-    </div>
-    <div class="content">
-      <div class="header">府中市</div>
-      <div class="date">
-        <span class="date_time">2018年7月22日公開</span>
-      </div>
-      <div class="description">この物件は日当たりが良く洗濯物も良く乾き、2人で住むにも十分な広さになっています。</div>
-    </div>
-    <div class="extra content">
-      <span><i class="user icon"></i> X人がLikeしています</span>
-    </div>
-  </div>
+<% end %>
 </div>
 
+
+<div class="title"><h2><strong>渋谷区の登録一覧</strong></h2></div>
+<div class="ui link cards ui four column grid">
+<% @estates.first(4).each do |f| %>
+  <div class="card">
+    <div class="image">
+      <% f.pictures.first(1).each do |p| %>
+      <%= link_to estate_path(f) do %>
+        <%= attachment_image_tag p, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="content">
+
+      <p class="header"><%= f.name %></p>
+
+      <div class="date">
+        <span class="date_time"><%= f.created_at.to_s.slice(0, 10) %> 公開</span>
+      </div>
+      <p class="description"><i class="fas fa-home"></i> <%= f.city.name %></p>
+      <div class="description"><%= f.comment %></div>
+    </div>
+    <div class="extra content">
+      <span><i class="user icon"></i> X人がLikeしています</span>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<div class="title"><h2><strong>空きスペース</strong></h2></div>
+<div class="ui link cards ui four column grid">
+<% @estates.first(4).each do |f| %>
+  <div class="card">
+    <div class="image">
+      <% f.pictures.first(1).each do |p| %>
+      <%= link_to estate_path(f) do %>
+        <%= attachment_image_tag p, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="content">
+
+      <p class="header"><%= f.name %></p>
+
+      <div class="date">
+        <span class="date_time"><%= f.created_at.to_s.slice(0, 10) %> 公開</span>
+      </div>
+      <p class="description"><i class="fas fa-home"></i> <%= f.city.name %></p>
+      <div class="description"><%= f.comment %></div>
+    </div>
+    <div class="extra content">
+      <span><i class="user icon"></i> X人がLikeしています</span>
+    </div>
+  </div>
+<% end %>
+</div>
 
     </div>
   </div>

@@ -1,3 +1,83 @@
-// Place all the styles related to the estates controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*-----eatate_new-----*/
+
+
+.eatate_main {
+  margin: 40px 0 20px 0;
+}
+
+.new-estate-title {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#form-title {
+  color: #ed6103;
+}
+
+#picture-field {
+  margin: 0 6px 0 7px;
+}
+
+.reply-icon {
+  font-size: 35px;
+  color: #ed6103;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.reply-icon:hover {
+  box-shadow: 0 0 4px gray;
+}
+
+
+.new-btn {
+  text-align: center;
+}
+
+
+/*-----eatate_show-----*/
+
+.left-content {
+  float: left;
+}
+
+.swiper-container {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff !important;
+}
+
+img.first-picture {
+  height: 100%;
+  width: 100%;
+  padding: 5px 0 0 0;
+}
+
+.left-content p {
+  font-size: 20px;
+}
+
+.estate-show-content {
+  padding-top: 25px;
+}
+
+
+
+/*-----eatate_index-----*/
+
+
+
+
+
+
+
+
+
+
+
+
+

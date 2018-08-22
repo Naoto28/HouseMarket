@@ -10,11 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require jquery
+//= require rails-ujs
+//= require jquery.turbolinks
 //= require turbolinks
-//= require bootstrap-sprockets
 //= require_tree .
-//= require jquery_ujs
+//= require bootstrap-sprockets
 // Loads all Semantic javascripts
 //= require semantic-ui
+//= require jquery_nested_form
