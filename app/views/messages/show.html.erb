@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="col-sm-12 col-md-8 col-md-offset-2">
+    <div class="profile-content col-md-12">
+      <div class="left-content col-sm-12 col-md-6">
+        <div class="user-image">
+          <% if current_user.profile_image == nil %>
+            <%= image_tag '/mail2.png', class: "user-pic", height: "200" %>
+          <% else %>
+            <%= attachment_image_tag @user, :profile_image, :fill, 200, 200, format: 'jpg', class: "user-pic" %>
+          <% end %>
+
+            <%= link_to user_path(current_user) do %>
+             <div class="ui teal button" id="mypage-btn"><i class="far fa-address-card mypage-icon"></i></div>
+            <% end %>
+            <%= link_to estates_path do %>
+              <div class="ui orange button" id="edit-btn"><i class="fas fa-home wrench-icon"></i></div>
+            <% end %>
+            <div class="ui red button" id="favorite-btn"><i class="far fa-heart heart-icon"></i></div>
+
+            <%= render 'modal' %>
+        </div>
+      </div>
+      <div class="right-content col-sm-12 col-md-6">
+        <h3 class="profile-title">受信メッセージ</h3>
+
+        <table class="ui celled striped table" style="table-layout:fixed;width:100%;">
+          <thead>
+            <tr>
+              <th colspan="1" style="width :70%;">差出人</th>
+              <th colspan="1" style="width :30%;">受信日時</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="messaege" style="cursor: pointer;">
+              <td class="collapsing"><i class="mail icon"></i> 管理者 </td>
+              <td>2018/2/2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

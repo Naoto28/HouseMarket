@@ -48,8 +48,8 @@
   font-size: 35px;
 }
 
-.title {
-  /*text-align: center;*/
+.profile-title {
+  text-align: center;
 }
 
 .profile-info {
@@ -79,12 +79,21 @@
 /*-----user_edit-----*/
 
 #mypage-btn {
-  padding: 21px;
   width: 75%;
   margin: 0 auto;
   display: block;
   margin-top: 20px;
 }
+
+.mypage-icon {
+  font-size: 35px;
+}
+
+
+.living_city {
+  text-indent: 5px;
+}
+
 
 
 

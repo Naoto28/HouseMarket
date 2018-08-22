@@ -1,2 +1,34 @@
-<h1>Estates#show</h1>
-<p>Find me in app/views/estates/show.html.erb</p>
+<div id="slider" class="swiper-container">
+  <div class="swiper-wrapper">
+    <% @estate.each do |f| %>
+      <div class="swiper-slide">
+      <%= attachment_image_tag f, :picture, format: 'png', class: "first-picture" %>
+      </div>
+    <% end %>
+  </div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  <div class="swiper-button-next swiper-button-white"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+  <div class="container estate-show-content">
+  <div class="col-sm-12 col-md-12">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+      <div class="left-content col-sm-12 col-md-6">
+        <label class=""><%= @estates.type.name %></label>
+        <p class=""><%= @estates.name %></p>
+        <h3 class=""><%= @estates.city.name %></h3>
+
+
+        <%= @estates.price %>
+        <%= @estates.content %>
+        <%= @estates.area %>
+      </div>
+      <div class="right-content col-sm-12 col-md-6">
+        <%= link_to message_path(current_user) do %>
+        <div class="ui blue button" id="message-btn"><i class="far fa-envelope mail-icon"></i></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 class RootsController < ApplicationController
   def top
+    @estates = Estate.all.order(created_at: :desc)
   end
 
   def about
