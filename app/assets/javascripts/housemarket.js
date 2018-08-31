@@ -2,6 +2,7 @@ $(function() {
 
 $(document).on('turbolinks:load', function() {
 
+// -----スクロール-----
 
 $(window).scroll(function() {
   if ($(this).scrollTop() > 250) {
@@ -14,6 +15,9 @@ $(window).scroll(function() {
 $('#scroll').click(function() {
   $('html, body').animate({'scrollTop': 0}, 700);
 });
+
+// -------------------
+
 
   function modalResize() {
     var w = $(window).width();
@@ -33,8 +37,8 @@ $('#scroll').click(function() {
       $('.modal').fadeOut(500);
     }
   })
-
   modalResize();
+
   $('#top-images-left').click(function() {
     $('.modal_wrapper').fadeIn(500);
     $('.modal').fadeIn(500);
@@ -42,33 +46,18 @@ $('#scroll').click(function() {
 
 // -----メッセージ-----
 
-  $('.modal_wrapper').click(function(e) {
+  $('.message_modal_wrapper').click(function(e) {
     if (!$(e.target).closest('.modal').length) {
-      $('.modal_wrapper').fadeOut(500);
-      $('.message-modal').fadeOut(500);
+      $('.message_modal_wrapper').fadeOut(500);
+      $('.message_modal').fadeOut(500);
     }
   })
 
   modalResize();
-  $('#messaege').click(function() {
-    $('.modal_wrapper').fadeIn(500);
-    $('.message-modal').fadeIn(500);
-  });
 
-  $(function () {
-      $('#messaege').click(function () {
-          // Ajax通信を開始する
-          $.ajax({
-              type: "POST",
-              url: '/action',
-              success: function() {
-                  console.log('成功');
-              },
-              error: function(){
-                  console.log('失敗');
-              }
-          })
-      });
+  $('#messaege').click(function() {
+    $('.message_modal_wrapper').fadeIn(500);
+    $('.message_modal').fadeIn(500);
   });
 
 
@@ -86,10 +75,12 @@ var mySwiper = new Swiper ('.swiper-container', {
   prevButton: '.swiper-button-prev'
 })
 
+// -------------------
 
 
-
-
+$('.ui.dropdown')
+  .dropdown()
+;
 
 
 

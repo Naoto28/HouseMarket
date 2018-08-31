@@ -1,19 +1,22 @@
-<div class="modal_wrapper"></div>
-<div class="message-modal">
-  <div class="modal-header">メッセージ</div>
+<div class="message_modal_wrapper"></div>
+<div class="message_modal">
+  <div class="message-modal-header">
+    <span class=header-from><i class="far fa-envelope"></i> From</span> :<span>   user1</span>
+    <!-- <span class=header-to>To</span>:<span>   user2</span> -->
+  </div>
     <div class="modal-body">
       <div class="ui form">
         <div class="field">
-          <label>Text</label>
+          <label class="message-label">本文</label>
           <textarea></textarea>
         </div>
         <div class="field">
-          <label>短いテキスト</label>
+          <label class="message-label">短いテキスト</label>
           <textarea rows="2"></textarea>
         </div>
       </div>
     </div>
     <div class="modal-footer">
-      <button class="ui blue button">検索</button>
+      <button class="ui orange button">送信</button>
     </div>
 </div>

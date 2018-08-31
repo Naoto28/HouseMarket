@@ -15,8 +15,9 @@
             <%= link_to estates_path do %>
               <div class="ui orange button" id="edit-btn"><i class="fas fa-home wrench-icon"></i></div>
             <% end %>
+            <%= link_to favorites_path do %>
             <div class="ui red button" id="favorite-btn"><i class="far fa-heart heart-icon"></i></div>
-
+            <% end %>
             <%= render 'modal' %>
         </div>
       </div>

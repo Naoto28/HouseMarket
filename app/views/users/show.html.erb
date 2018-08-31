@@ -10,9 +10,11 @@
           <% end %>
         </div>
         <%= link_to message_path(current_user) do %>
-        <div class="ui blue button" id="message-btn"><i class="far fa-envelope mail-icon"></i></div>
+          <div class="ui blue button" id="message-btn"><i class="far fa-envelope mail-icon"></i></div>
         <% end %>
-        <div class="ui red button" id="favorite-btn"><i class="far fa-heart heart-icon"></i></div>
+        <%= link_to favorites_path do %>
+          <div class="ui red button" id="favorite-btn"><i class="far fa-heart heart-icon"></i></div>
+        <% end %>
         <%= link_to estates_path do %>
           <div class="ui orange button" id="edit-btn"><i class="fas fa-home wrench-icon"></i></div>
         <% end %>

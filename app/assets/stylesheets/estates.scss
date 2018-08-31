@@ -47,6 +47,11 @@
   border-bottom: 1px solid #ddd;
 }
 
+.estate-show-content {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 .swiper-pagination-bullet-active {
   background: #fff !important;
 }
@@ -57,15 +62,66 @@ img.first-picture {
   padding: 5px 0 0 0;
 }
 
-.left-content p {
-  font-size: 20px;
+.estate-left-content {
+  background-color: #fdfafa;
+  padding: 10px;
 }
 
-.estate-show-content {
-  padding-top: 25px;
+.estate-left-content span.date_time {
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.estate-left-content label {
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.2);
+  color: #ed6103;
+}
+
+.estate-left-content span {
+  font-size: 18px;
+  display: block;
+  padding-bottom: 8px;
+}
+
+.estate-right-content {
+  background-color: #fdfafa;
+  padding: 10px;
+}
+
+.estate-right-content label {
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.2);
+  color: #ed6103;
+  /*margin-top: 20px;*/
+}
+
+label.sell-user {
+  color: #ed6103;
+  margin-top: 20px;
+}
+
+#farite-btn {
+  display: list-item;
+  width: 100%;
+  margin: 20px 0 20px 0;
+}
+
+#favorite_btn {
+  display: list-item;
+  width: 100%;
+  /*margin-bottom: 20px;*/
+
 }
 
 
+.btn-list {
+  list-style: none;
+}
+
+
+
+/*#farite-btn.hovered {
+  background-color: #ccc;
+}*/
 
 /*-----eatate_index-----*/
 

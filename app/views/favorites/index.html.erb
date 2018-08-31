@@ -27,11 +27,13 @@
             </tr>
           </thead>
           <tbody>
-            <% @estate.each do |f| %>
+            <% @favorites.each do |f| %>
               <tr id="messaege" style="cursor: pointer;">
-                <%= link_to estate_path(f) do %>
-                <td class="collapsing"><i class="home icon" ></i> <%= f.name %></td>
+                <%= link_to estate_path(f.estate) do %>
+                <td class="collapsing"><i class="home icon" ></i> <%= f.estate.name %></td>
                 <td><%= f.created_at.strftime('%Y/%m/%d') %></td>
+                <% end %>
+                <%= link_to estate_path(f.estate) do %>
                 <% end %>
               </tr>
             <% end %>

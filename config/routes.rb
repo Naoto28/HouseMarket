@@ -16,6 +16,13 @@ Rails.application.routes.draw do
 
   get 'spaces/new'
 
+  get "favorites/index", as: 'favorites'
+
+
+  resources :estates, only: [:new, :create, :index, :show] do
+        resource :favorites, only: [:create, :destroy]
+  end
+
 devise_for :users, controllers: {
   sessions:      'users/sessions',
   passwords:     'users/passwords',
@@ -25,12 +32,13 @@ devise_for :users, controllers: {
   resources :users
   resources :cities
   resources :estates
-  resources :favorites
   resources :messages
 
-  root "roots#top"
-  get "roots/about", as: 'about'
 
+  get "roots/about", as: 'about'
+  get "roots/result", as: 'result'
+  get "roots/city_result", as: 'city_result'
+  root "roots#top"
 
 
 
