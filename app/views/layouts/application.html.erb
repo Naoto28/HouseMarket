@@ -8,7 +8,9 @@
 <head>
   <title>HouseMarket</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
 
@@ -23,24 +25,52 @@
             <%= link_to root_path do %>
               <img class="logo" src="/logo1.png" alt="housemarket" height="70">
             <% end %>
+
             <ul class="nav-list navbar-nav text-uppercase ml-auto">
               <li class="nav-item" id="nav-items">
                 <%= link_to 'サービスを知る', about_path, class: "nav-items" %>
-                <%= link_to 'マイページ', user_path(current_user), class: "nav-items" %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-items" %>
-                <div class="ui compact menu">
-                  <div class="ui simple dropdown item">マーケットメニュー <i class="dropdown icon"></i> <div class="menu">
 
-                    <%= link_to estates_path(current_user) do %>
-                      <div class="">登録不動産</div>
-                    <% end %>
-                      <div class="item">お気に入り</div>
-                      <div class="item">メッセージ</div>
-                    </div>
-                  </div>
-                </div>
+
+<div class="ui floating labeled icon dropdown button id="dropdown-menu">
+  <i class="far fa-caret-square-down icon" id="dropdown-icon" ></i>
+  <span class="text">メインメニュー</span>
+  <div class="menu" id="downmenu">
+      <%= link_to user_path(current_user) do %>
+        <div class="item dropdown-menus">
+          <span class="text">マイページ</span>
+        </div>
+      <% end %>
+
+      <%= link_to estates_path do %>
+        <div class="item dropdown-menus">
+          <span class="text">登録した不動産</span>
+        </div>
+      <% end %>
+
+      <%= link_to favorites_path do %>
+        <div class="item dropdown-menus">
+          <span class="text">お気に入り</span>
+        </div>
+      <% end %>
+
+      <%= link_to message_path(current_user) do %>
+      <div class="item dropdown-menus">
+        <span class="text">メッセージ</span>
+      </div>
+      <% end %>
+
+      <%= link_to destroy_user_session_path, method: :delete do %>
+      <div class="item dropdown-menus">
+        <span class="text">ログアウト</span>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
               </li>
             </ul>
+
+
           </div>
         </div>
       </nav>

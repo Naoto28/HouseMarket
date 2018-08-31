@@ -1,15 +1,17 @@
 <div class="modal_wrapper"></div>
 <div class="modal">
   <div class="modal-header">都道府県で絞り込む</div>
+  <%= form_for @form, url: result_path, method: :get do |f| %>
     <div class="modal-body">
-      <table class="table table-bordered">
+      <table class="table table-bordered" id="modal-table">
         <tbody>
           <tr>
             <th>北海道</th>
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>北海道</label>
+                  <label><%= f.radio_button('prefecture_id', '1', {}) %> 北海道</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @hokkaido, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -19,22 +21,13 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>青森県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>岩手県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>宮城県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>秋田県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>山形県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>福島県</label>
+                  <label><%= f.radio_button('prefecture_id', '2', {}) %> 青森県</label>
+                  <label><%= f.radio_button('prefecture_id', '3', {}) %> 岩手県</label>
+                  <label><%= f.radio_button('prefecture_id', '4', {}) %> 宮城県</label>
+                  <label><%= f.radio_button('prefecture_id', '5', {}) %> 秋田県</label>
+                  <label><%= f.radio_button('prefecture_id', '6', {}) %> 山形県</label>
+                  <label><%= f.radio_button('prefecture_id', '7', {}) %> 福島県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @tohoku, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -44,25 +37,14 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>東京都</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>神奈川県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>埼玉県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>千葉県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>群馬県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>茨城県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>栃木県</label>
+                  <label><%= f.radio_button('prefecture_id', '8', {}) %> 茨城県</label>
+                  <label><%= f.radio_button('prefecture_id', '9', {}) %> 栃木県</label>
+                  <label><%= f.radio_button('prefecture_id', '10', {}) %> 群馬県</label>
+                  <label><%= f.radio_button('prefecture_id', '11', {}) %> 埼玉県</label>
+                  <label><%= f.radio_button('prefecture_id', '12', {}) %> 千葉県</label>
+                  <label><%= f.radio_button('prefecture_id', '13', {}) %> 東京都</label>
+                  <label><%= f.radio_button('prefecture_id', '14', {}) %> 神奈川県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @kanto, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -72,13 +54,10 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>新潟県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>山梨県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>長野県</label>
+                  <label><%= f.radio_button('prefecture_id', '15', {}) %> 新潟県</label>
+                  <label><%= f.radio_button('prefecture_id', '19', {}) %> 山梨県</label>
+                  <label><%= f.radio_button('prefecture_id', '20', {}) %> 長野県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @koshinetsu, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -88,13 +67,10 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>富山県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>石川県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>福井県</label>
+                  <label><%= f.radio_button('prefecture_id', '16', {}) %> 富山県</label>
+                  <label><%= f.radio_button('prefecture_id', '17', {}) %> 石川県</label>
+                  <label><%= f.radio_button('prefecture_id', '18', {}) %> 福井県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @hokuriku, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -104,16 +80,11 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>岐阜県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>静岡県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>愛知県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>三重県</label>
+                  <label><%= f.radio_button('prefecture_id', '21', {}) %> 岐阜県</label>
+                  <label><%= f.radio_button('prefecture_id', '22', {}) %> 静岡県</label>
+                  <label><%= f.radio_button('prefecture_id', '23', {}) %> 愛知県</label>
+                  <label><%= f.radio_button('prefecture_id', '24', {}) %> 三重県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @tokai, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -123,22 +94,13 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>大阪府</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>京都府</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>兵庫県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>滋賀県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>奈良県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>和歌山県</label>
+                  <label><%= f.radio_button('prefecture_id', '25', {}) %> 滋賀県</label>
+                  <label><%= f.radio_button('prefecture_id', '26', {}) %> 京都府</label>
+                  <label><%= f.radio_button('prefecture_id', '27', {}) %> 大阪府</label>
+                  <label><%= f.radio_button('prefecture_id', '28', {}) %> 兵庫県</label>
+                  <label><%= f.radio_button('prefecture_id', '29', {}) %> 奈良県</label>
+                  <label><%= f.radio_button('prefecture_id', '30', {}) %> 和歌山県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @kansai, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -148,19 +110,12 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>鳥取県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>島根県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>岡山県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>広島県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>山口県</label>
+                  <label><%= f.radio_button('prefecture_id', '31', {}) %> 鳥取県</label>
+                  <label><%= f.radio_button('prefecture_id', '32', {}) %> 島根県</label>
+                  <label><%= f.radio_button('prefecture_id', '33', {}) %> 岡山県</label>
+                  <label><%= f.radio_button('prefecture_id', '34', {}) %> 広島県</label>
+                  <label><%= f.radio_button('prefecture_id', '35', {}) %> 山口県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @chugoku, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -170,16 +125,11 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>徳島県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>香川県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>愛媛県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>高知県</label>
+                  <label><%= f.radio_button('prefecture_id', '36', {}) %> 徳島県</label>
+                  <label><%= f.radio_button('prefecture_id', '37', {}) %> 香川県</label>
+                  <label><%= f.radio_button('prefecture_id', '38', {}) %> 愛媛県</label>
+                  <label><%= f.radio_button('prefecture_id', '39', {}) %> 高知県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @shikoku, :id, :name) %>
                 </li>
               </ul>
             </td>
@@ -189,43 +139,35 @@
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>福岡県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>佐賀県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>長崎県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>熊本県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>大分県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>宮崎県</label>
-                </li>
-                <li>
-                  <input type="checkbox"> <label>鹿児島県</label>
+                  <label><%= f.radio_button('prefecture_id', '40', {}) %> 福岡県</label>
+                  <label><%= f.radio_button('prefecture_id', '41', {}) %> 佐賀県</label>
+                  <label><%= f.radio_button('prefecture_id', '42', {}) %> 長崎県</label>
+                  <label><%= f.radio_button('prefecture_id', '43', {}) %> 熊本県</label>
+                  <label><%= f.radio_button('prefecture_id', '44', {}) %> 大分県</label>
+                  <label><%= f.radio_button('prefecture_id', '45', {}) %> 宮崎県</label>
+                  <label><%= f.radio_button('prefecture_id', '46', {}) %> 鹿児島県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @kyusyu, :id, :name) %>
                 </li>
               </ul>
             </td>
           </tr>
           <tr>
-            <th>沖縄県</th>
+            <th>沖縄</th>
             <td>
               <ul class="list-inline">
                 <li>
-                  <input type="checkbox"> <label>沖縄県</label>
+                  <label><%= f.radio_button('prefecture_id', '47', {}) %> 沖縄県</label>
+                  <%#= f.collection_radio_buttons(:prefecture_id, @okinawa, :id, :name) %>
                 </li>
               </ul>
             </td>
           </tr>
+
         </tbody>
       </table>
-    </div>
-    <div class="modal-footer">
-      <button class="ui orange button">検索</button>
-    </div>
+  </div>
+  <div class="modal-footer" id="modal-footer">
+    <%= f.submit '検索', class: "ui orange button" %>
+    <% end %>
+  </div>
 </div>

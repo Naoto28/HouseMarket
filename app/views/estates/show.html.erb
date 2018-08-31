@@ -13,22 +13,58 @@
 
   <div class="container estate-show-content">
   <div class="col-sm-12 col-md-12">
-    <div class="col-sm-12 col-md-10 col-md-offset-1">
-      <div class="left-content col-sm-12 col-md-6">
-        <label class=""><%= @estates.type.name %></label>
-        <p class=""><%= @estates.name %></p>
-        <h3 class=""><%= @estates.city.name %></h3>
+    <div class="col-sm-12 col-md-12">
+      <div class="estate-left-content col-sm-12 col-md-6">
+        <span class="date_time"><i class="far fa-clock"></i> <%= @estates.created_at.strftime('%Y/%m/%d') %></span>
+        <label class=""><i class="fas fa-warehouse"></i> <%= @estates.type.name %></label>
+        <span class=""><%= @estates.name %></span>
+        <div class="under"></div><br>
+        <label class=""><i class="fas fa-home"></i> 市区町村</label>
+        <p class=""> <%= @estates.city.name %></p>
+        <label class=""><i class="fab fa-bitcoin"></i> 価格</label>
+        <p class=""> <%= @estates.price.to_s(:delimited) %>円</p>
+        <label class=""><i class="fa fa-square"></i> 面積</label>
+        <p class=""> <%= @estates.area %>㎡</p>
 
 
-        <%= @estates.price %>
-        <%= @estates.content %>
-        <%= @estates.area %>
+        <label class=""><i class="fas fa-comment-alt"></i> 不動産紹介</label>
+        <p class=""> <%= @estates.content %></p>
       </div>
+
+
+
       <div class="right-content col-sm-12 col-md-6">
-        <%= link_to message_path(current_user) do %>
-        <div class="ui blue button" id="message-btn"><i class="far fa-envelope mail-icon"></i></div>
+
+        <div class="estate-right-content">
+        <button class="ui inverted orange button" id="farite-btn">投稿者のプロフィールを見る</button>
+        <button class="ui inverted primary button" id="farite-btn">取引を始める</button>
+
+<!-- -----favorite----- -->
+
+        <div class="favorite-content">
+        <%= render partial: "favorites/favorite", locals: {estates: @estates, estate: @estate} %>
+        </div>
+
+<!-- ------------------ -->
+
+
+
+          <label class="sell-user"><i class="fas fa-upload"></i> 投稿者</label>
+          <p class=""><%= current_user.user_name %></p>
+          <label class=""><i class="fas fa-comment-dots"></i> コメント</label>
+          <p class=""> <%= @estates.comment %></p>
+        </div>
+        <%= link_to root_path do %>
+        <button class="ui basic button" id="farite-btn"><i class="fas fa-desktop"></i> トップページへ戻る</button>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+

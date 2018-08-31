@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require jquery.turbolinks
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 // Loads all Semantic javascripts
