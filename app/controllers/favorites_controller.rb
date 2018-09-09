@@ -23,6 +23,7 @@ class FavoritesController < ApplicationController
   def index
     @user = current_user
     @favorites = @user.favorites
+    # binding.pry
   end
 
 
