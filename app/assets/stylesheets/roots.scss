@@ -211,6 +211,27 @@ a {
 
 /*-----result-----*/
 
+.background {
+  background-image: url(/nihonchizu.png);
+  background-size: contain;
+  background-position: bottom;
+}
+
+.bg-mask {
+  height: 100%;
+  background: rgba(255,255,255,0.7);
+}
+
+#pagination {
+  background: none;
+  height: 0;
+  padding-bottom: 20px;
+  display: contents;
+}
+
+#search-container {
+  height: 1000px;
+}
 
 #result-item {
   padding: 15px 5px 15px 5px;

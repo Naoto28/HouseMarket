@@ -39,67 +39,51 @@
 
 <div class="title"><h2><strong>Pick Up</strong></h2></div>
 <div class="ui link cards three column grid">
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/house1.jpg">
+  <% @estates_rand.each do |e| %>
+    <div class="column">
+      <div class="ui fluid card">
+        <div class="image">
+        <% e.pictures.first(1).each do |q| %>
+        <%= link_to estate_path(e) do %>
+          <%= attachment_image_tag q, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;",format: 'png' %>
+        <% end %>
+        <% end %>
       </div>
-      <div class="content">
-        <a class="header">Daniel Louise</a>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/house2.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Helen Troy</a>
+        <div class="content">
+          <a class="header"><%= e.name %></a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="ui fluid card">
-      <div class="image">
-        <img src="/house3.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Elliot Fu</a>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
-
-
 
 
 <div class="title"><h2><strong>新しく登録された不動産</strong></h2></div>
 <div class="ui link cards ui four column grid">
-<% @estates.first(4).each do |f| %>
-  <div class="card">
-    <div class="image">
-      <% f.pictures.first(1).each do |p| %>
-      <%= link_to estate_path(f) do %>
-        <%= attachment_image_tag p, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
-      <% end %>
-      <% end %>
-    </div>
-    <div class="content">
-
-      <p class="header"><%= f.name %></p>
-
-      <div class="date">
-        <span class="date_time"><%= f.created_at.to_s.slice(0, 10) %> 公開</span>
+  <% @estates.first(4).each do |f| %>
+    <div class="card">
+      <div class="image">
+        <% f.pictures.first(1).each do |p| %>
+        <%= link_to estate_path(f) do %>
+          <%= attachment_image_tag p, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
+        <% end %>
+        <% end %>
       </div>
-      <p class="description"><i class="fas fa-home"></i> <%= f.city.name %></p>
-      <div class="description"><%= f.comment %></div>
+      <div class="content">
+
+        <p class="header"><%= f.name %></p>
+
+        <div class="date">
+          <span class="date_time"><%= f.created_at.to_s.slice(0, 10) %> 公開</span>
+        </div>
+        <p class="description"><i class="fas fa-home"></i> <%= f.city.name %></p>
+        <div class="description"><%= f.comment %></div>
+      </div>
+      <div class="extra content">
+        <span><i class="user icon"></i> <%= f.favorites.count %>人がLikeしています</span>
+      </div>
     </div>
-    <div class="extra content">
-      <span><i class="user icon"></i> <%= f.favorites.count %>人がLikeしています</span>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
 
 

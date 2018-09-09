@@ -4,18 +4,14 @@
       <div class="col-sm-12 col-md-8 col-md-offset-2">
         <div class="profile-content col-md-12">
           <div class="right-content col-sm-12 col-md-12">
-            <% @prefecture.each do |p| %>
-            <h3 class="profile-title"><%= p.name %></h3>
-            <% end %>
+            <h3 class="profile-title"><%= @cities.name %></h3>
             <div class="profile-info">
-              <% @citys.each do |f| %>
+
+              <% @estates.each do |f| %>
               <div class="ui middle aligned divided list" id="result-list">
-                <%= link_to city_result_path(f.id) do %>
+                <%= link_to estate_path(f.id) do %>
                   <div class="item" id="result-item">
                     <div class="content" id="prefecture-content"> <%= f.name %></div>
-                    <div class="right floated content" id="estate-count">
-                      <div><%= f.estates.count %> 件 <i class="far fa-arrow-alt-circle-right"></i></div>
-                    </div>
                   </div>
                 <% end %>
                 <div class="item" id="result-list">
@@ -24,7 +20,6 @@
                 </div>
               </div>
               <% end %>
-              <%= paginate @citys %>
             </div>
           </div>
         </div>
@@ -32,9 +27,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-

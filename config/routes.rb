@@ -37,7 +37,7 @@ devise_for :users, controllers: {
 
   get "roots/about", as: 'about'
   get "roots/result", as: 'result'
-  get "roots/city_result", as: 'city_result'
+  get "roots/city_result/:id" => 'roots#city_result', as: 'city_result'
   root "roots#top"
 
 
