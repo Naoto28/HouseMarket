@@ -1,7 +1,20 @@
 class RootsController < ApplicationController
   def top
+  # pickup
     @estates_rand = Estate.order("RANDOM()").limit(3)
+
+  # 渋谷のアイテム
+    @shibuya_no = City.find(13)
+    @estates_shibuya = Estate.where(city_id: @shibuya_no.id).order(created_at: :desc)
+
+  # 新規登録
     @estates = Estate.all.order(created_at: :desc)
+
+  # マンション表示
+    @mansion_no = Type.find(1)
+    @mansions = Estate.where(type_id: @mansion_no.id).order(created_at: :desc)
+
+  # 検索フォームに使用
     @form = PrefectureFindForm.new
   end
 

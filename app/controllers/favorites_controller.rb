@@ -24,8 +24,6 @@ class FavoritesController < ApplicationController
     @user = current_user
     @favorites = @user.favorites
     # binding.pry
+    @estates = Estate.where(id: @favorites.estate_id)
   end
-
-
-
 end
