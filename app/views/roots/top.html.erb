@@ -37,17 +37,20 @@
 <!-- -----アイテム----- -->
 
 
-<div class="title"><h2><strong>Pick Up</strong></h2></div>
+<!-- ランダムで表示 -->
+<div class="title" style="padding-top: 15px;"><h2><i class="fas fa-crosshairs" style="color: #fbb03c;"></i> <strong>Pick Up</strong></h2></div>
 <div class="ui link cards three column grid">
   <% @estates_rand.each do |e| %>
     <div class="column">
       <div class="ui fluid card">
         <div class="image">
+          <div id="aaa">
         <% e.pictures.first(1).each do |q| %>
         <%= link_to estate_path(e) do %>
           <%= attachment_image_tag q, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;",format: 'png' %>
         <% end %>
         <% end %>
+      </div>
       </div>
         <div class="content">
           <a class="header"><%= e.name %></a>
@@ -58,7 +61,9 @@
 </div>
 
 
-<div class="title"><h2><strong>新しく登録された不動産</strong></h2></div>
+
+<!-- 新規登録順 -->
+<div class="title" style="padding-top: 15px;"><h2><i class="fas fa-sync-alt" style="color: #fbb03c;"></i><strong> 新しく登録された不動産</strong></h2></div>
 <div class="ui link cards ui four column grid">
   <% @estates.first(4).each do |f| %>
     <div class="card">
@@ -80,68 +85,75 @@
         <div class="description"><%= f.comment %></div>
       </div>
       <div class="extra content">
-        <span><i class="user icon"></i> <%= f.favorites.count %>人がLikeしています</span>
+        <span><i class="user icon"></i> <%= f.favorites.count %>人がお気に入り登録しています</span>
       </div>
     </div>
   <% end %>
 </div>
 
 
-<div class="title"><h2><strong>渋谷区の登録一覧</strong></h2></div>
+
+
+<!-- 渋谷区で登録したアイテム -->
+<div class="title" style="padding-top: 15px;"><h2><i class="far fa-flag" style="color: #fbb03c;"></i><strong> 渋谷区の登録一覧</strong></h2></div>
 <div class="ui link cards ui four column grid">
-<% @estates.first(4).each do |f| %>
+<% @estates_shibuya.first(4).each do |s| %>
   <div class="card">
     <div class="image">
-      <% f.pictures.first(1).each do |p| %>
-      <%= link_to estate_path(f) do %>
-        <%= attachment_image_tag p, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
+      <% s.pictures.first(1).each do |i| %>
+      <%= link_to estate_path(s) do %>
+        <%= attachment_image_tag i, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
       <% end %>
       <% end %>
     </div>
     <div class="content">
 
-      <p class="header"><%= f.name %></p>
+      <p class="header"><%= s.name %></p>
 
       <div class="date">
-        <span class="date_time"><%= f.created_at.to_s.slice(0, 10) %> 公開</span>
+        <span class="date_time"><%= s.created_at.to_s.slice(0, 10) %> 公開</span>
       </div>
-      <p class="description"><i class="fas fa-home"></i> <%= f.city.name %></p>
-      <div class="description"><%= f.comment %></div>
+      <p class="description"><i class="fas fa-home"></i> <%= s.city.name %></p>
+      <div class="description"><%= s.comment %></div>
     </div>
     <div class="extra content">
-      <span><i class="user icon"></i> X人がLikeしています</span>
+      <span><i class="user icon"></i> <%= s.favorites.count %>人がお気に入り登録しています</span>
     </div>
   </div>
 <% end %>
 </div>
 
-<div class="title"><h2><strong>空きスペース</strong></h2></div>
+
+<!-- 不動産の種類がマンションのアイテム -->
+<div class="title" style="padding-top: 15px;"><h2><i class="far fa-building" style="color: #fbb03c;"></i><strong> マンション</strong></h2></div>
 <div class="ui link cards ui four column grid">
-<% @estates.first(4).each do |f| %>
+<% @mansions.first(4).each do |m| %>
   <div class="card">
     <div class="image">
-      <% f.pictures.first(1).each do |p| %>
-      <%= link_to estate_path(f) do %>
-        <%= attachment_image_tag p, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
+      <% m.pictures.first(1).each do |n| %>
+      <%= link_to estate_path(m) do %>
+        <%= attachment_image_tag n, :picture, style: "width:100%; height:50%; border-radius:4px 4px 0 0;", format: 'png' %>
       <% end %>
       <% end %>
     </div>
     <div class="content">
 
-      <p class="header"><%= f.name %></p>
+      <p class="header"><%= m.name %></p>
 
       <div class="date">
-        <span class="date_time"><%= f.created_at.to_s.slice(0, 10) %> 公開</span>
+        <span class="date_time"><%= m.created_at.to_s.slice(0, 10) %> 公開</span>
       </div>
-      <p class="description"><i class="fas fa-home"></i> <%= f.city.name %></p>
-      <div class="description"><%= f.comment %></div>
+      <p class="description"><i class="fas fa-home"></i> <%= m.city.name %></p>
+      <div class="description"><%= m.comment %></div>
     </div>
     <div class="extra content">
-      <span><i class="user icon"></i> X人がLikeしています</span>
+      <span><i class="user icon"></i> <%= m.favorites.count %>人がお気に入り登録しています</span>
     </div>
   </div>
 <% end %>
 </div>
+
+
 
     </div>
   </div>
