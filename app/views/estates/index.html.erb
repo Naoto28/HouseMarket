@@ -14,34 +14,37 @@
           <%= link_to favorites_path do %>
             <div class="ui red button" id="favorite-btn"><i class="far fa-heart heart-icon"></i></div>
           <% end %>
+          <%= link_to root_path do %>
+            <div class="ui grey button" id="edit-btn"><i class="fas fa-desktop wrench-icon"></i></div>
+          <% end %>
           </div>
-
       </div>
+
       <div class="right-content col-sm-12 col-md-6">
         <h3 class="profile-title">登録不動産</h3>
         <table class="ui celled striped table" style="table-layout:fixed;width:100%;">
           <thead>
             <tr>
-              <th colspan="1" style="width :70%;">不動産名</th>
+              <th colspan="1" style="width :72%;">不動産名</th>
               <th colspan="1" style="width :30%;">登録日時</th>
             </tr>
           </thead>
           <tbody>
             <% @estate.each do |f| %>
               <tr id="messaege" style="cursor: pointer;">
-                <%= link_to estate_path(f) do %>
-                <td class="collapsing"><i class="home icon" ></i> <%= f.name %></td>
+                <td class="collapsing" id="pages"><%= link_to estate_path(f) do %><i class="home icon" ></i> <%= f.name %></td>
                 <td><%= f.created_at.strftime('%Y/%m/%d') %></td>
                 <% end %>
               </tr>
             <% end %>
           </tbody>
         </table>
+        <div class="page" id="back"><i class="fas fa-angle-left"></i></div>
+        <div class="page" id="next" style="float: right;"><i class="fas fa-angle-right"></i></div>
       </div>
     </div>
   </div>
 </div>
-
 
 
 

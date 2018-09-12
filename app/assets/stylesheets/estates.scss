@@ -91,7 +91,6 @@ img.first-picture {
 .estate-right-content label {
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.2);
   color: #ed6103;
-  /*margin-top: 20px;*/
 }
 
 label.sell-user {
@@ -108,8 +107,6 @@ label.sell-user {
 #favorite_btn {
   display: list-item;
   width: 100%;
-  /*margin-bottom: 20px;*/
-
 }
 
 
@@ -118,20 +115,28 @@ label.sell-user {
 }
 
 
-
-/*#farite-btn.hovered {
-  background-color: #ccc;
-}*/
-
 /*-----eatate_index-----*/
 
 
+.collapsing a {
+  color: black;
+}
+
+.collapsing a:hover {
+  color: #ed6103;
+}
 
 
+.page {
+  display: inline-block;
+  cursor: pointer;
+  color: #ed6103;
+  font-size: 28px;
+}
 
-
-
-
+.page:hover {
+  color: #eaa373;
+}
 
 
 
