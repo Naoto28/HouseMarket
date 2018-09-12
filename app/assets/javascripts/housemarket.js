@@ -16,7 +16,7 @@ $('#scroll').click(function() {
   $('html, body').animate({'scrollTop': 0}, 700);
 });
 
-// -------------------
+// -----検索モーダル-----
 
 
   function modalResize() {
@@ -75,7 +75,7 @@ var mySwiper = new Swiper ('.swiper-container', {
   prevButton: '.swiper-button-prev'
 })
 
-// -------------------
+// -----ヘッダーメニュードロップダウン-----
 
 
 $('.ui.dropdown')
@@ -83,6 +83,33 @@ $('.ui.dropdown')
 ;
 
 
+// -----テーブルページネーション-----
+
+
+ $(function() {
+        var page = 0;
+
+        function draw() {
+          $('tr').hide();
+          $('tr:first,tr:gt(' + page * 9 + '):lt(9)').show();
+        }
+
+        $(document).on('click',"#back",function() {
+          if (page > 0) {
+            page--;
+            draw();
+          }
+        });
+
+        $(document).on('click',"#next",function() {
+          if(page < ((document.getElementsByTagName('tr').length) - 1 )/ 10 -1){
+            page++;
+            draw();
+          }
+        });
+
+        draw();
+      });
 
 
 });

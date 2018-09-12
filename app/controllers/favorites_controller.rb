@@ -14,7 +14,6 @@ class FavoritesController < ApplicationController
     @estate = Estate.find(params[:estate_id])
     @favorite = current_user.favorites.find_by(estate_id: params[:estate_id])
     @favorite.destroy
-    # redirect_to estate_path(estate)
     respond_to do |format|
       format.js {render :template => "favorites/destroy",locals: { favorite: @favorite, estates: @estate} }
     end
@@ -23,7 +22,8 @@ class FavoritesController < ApplicationController
   def index
     @user = current_user
     @favorites = @user.favorites
-    # binding.pry
-    @estates = Estate.where(id: @favorites.estate_id)
+    # お気に入りに入れたアイテムを配列に
+    estates_array = @favorites.pluck(:estate_id)
+    @estates = Estate.where(id: estates_array).order(created_at: :desc)
   end
 end

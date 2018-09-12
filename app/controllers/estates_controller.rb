@@ -1,6 +1,6 @@
 class EstatesController < ApplicationController
   def index
-    @estate = Estate.where(user_id: current_user.id)
+    @estate = Estate.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   def show
